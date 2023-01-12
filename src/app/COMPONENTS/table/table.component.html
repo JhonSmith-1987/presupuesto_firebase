@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="card content">
+        <div class="content_result card" *ngFor="let income of income">
+          <div class="result_result_result">
+            <div>
+              <span class="span_result">Presupuesto inicial</span>
+              <div class="result">{{income.value}}</div>
+            </div>
+            <div>
+              <span class="span_result">Acción</span>
+              <div class="result"><button (click)="deleteIncome(income.id)" class="btn btn-danger">Eliminar</button></div>
+            </div>
+          </div>
+          <div class="result_result">
+            <span class="span_result"><button (click)="returnSpent()" class="btn btn-dark">Atras</button></span>
+          </div>
+        </div>
+        <div class="card scrollY padding">
+          <table class="table">
+            <thead>
+            <tr>
+              <th scope="col">Detalle</th>
+              <th scope="col">Valor</th>
+              <th scope="col">acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let spent of spent">
+              <td>{{spent.detail}}</td>
+              <td>{{spent.value}}</td>
+              <td><button class="btn btn-danger" (click)="deleteSpent(spent.id)">Eliminar</button></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
